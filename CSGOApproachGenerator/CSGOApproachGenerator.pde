@@ -14,17 +14,17 @@ int textColor = 0;
 int bRed = 211, bGreen = 211, bBlue = 211;
 
 void setup() {
-  size(350, 700);
+  size(500, 700);
 }
 
 void draw() {
   background(255);
   //Title Box
   fill (0, 0, 255);
-  rect(0, 0, width, height/25);
+  rect(0, 0, width, 40);
   //Title of the program at the top of the screen
   fill(255);
-  textSize(23); 
+  textSize(33); 
   textAlign(CENTER, TOP);
   text("CS:GO APPROACH GENERATOR", width/2, 0);
   //Calls the Map Selection Function which includes the buttons and text for that part
