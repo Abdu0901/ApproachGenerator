@@ -4,6 +4,15 @@
 // example 'maps/"de_dust2_map.png"'
 // example 'maps/strats/de_dust2_strats/de_dust2_map_strat1.png"'
 
+//Stroke color of the buttons
+int strokeColor = 0;
+
+//Brightness of text used in buttons
+int textColor = 0;
+
+//Color of buttons
+int bRed = 211, bGreen = 211, bBlue = 211;
+
 void setup() {
   size(350, 700);
 }
@@ -13,9 +22,11 @@ void draw() {
   //Title Box
   fill (0, 0, 255);
   rect(0, 0, width, height/25);
-  //Title
+  //Title of the program at the top of the screen
   fill(255);
   textSize(23); 
   textAlign(CENTER, TOP);
   text("CS:GO APPROACH GENERATOR", width/2, 0);
+  //Calls the Map Selection Function which includes the buttons and text for that part
+  MapSelection();
 }
