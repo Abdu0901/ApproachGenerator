@@ -1,7 +1,7 @@
 //Define name of a button
 Button MirageButton;
-Button Dust2MapButton;
-Button InfernoMapButton;
+Button Dust2Button;
+Button InfernoButton;
 Button EmptyMapButton;
 
 //Button Positions and Size
@@ -15,6 +15,11 @@ int xP = 50;
 int yP = 125;
 int lP = 400;
 int hP = 400;
+
+//Boolean that checks if buttons have been clicked
+boolean IsMirageHighLighted = false;
+boolean IsDust2HighLighted = false;
+boolean IsInfernoHighLighted = false;
 
 void MapSelection() {
   //Title Box
@@ -33,26 +38,44 @@ void MapSelection() {
 
   //Mirage Map Button
   MirageButton = new Button(xM, yM, lM, hM, strokeColor, textColor, "Mirage", 20, 0, bRed, bGreen, bBlue);
-  MirageButton.ButtonUpdate();
   if (MirageButton.isButtonPressed(mouseX, mouseY, mousePressed, MirageButton) == true) {
     println("Mirage Map has been selected");
     EmptyMapPic = MirageMapPic;
+    IsMirageHighLighted = true;
+    IsDust2HighLighted = false;
+    IsInfernoHighLighted = false;
+  }
+  //Checks if Mirage is highlighted
+  if (IsMirageHighLighted == true) {
+    MirageHighlighted();
   }
 
   //Dust 2 Map Button
-  Dust2MapButton = new Button(xM+lM+35, yM, lM, hM, strokeColor, textColor, "Dust 2", 20, 0, bRed, bGreen, bBlue);
-  Dust2MapButton.ButtonUpdate();
-  if (Dust2MapButton.isButtonPressed(mouseX, mouseY, mousePressed, Dust2MapButton) == true) {
+  Dust2Button = new Button(xM+lM+35, yM, lM, hM, strokeColor, textColor, "Dust 2", 20, 0, bRed, bGreen, bBlue);
+  if (Dust2Button.isButtonPressed(mouseX, mouseY, mousePressed, Dust2Button) == true) {
     println("Dust2 Map has been selected");
     EmptyMapPic = Dust2MapPic;
+    IsMirageHighLighted = false;
+    IsDust2HighLighted = true;
+    IsInfernoHighLighted = false;
+  }
+  //Checks if Dust2 is highlighted
+  if (IsDust2HighLighted == true) {
+    Dust2Highlighted();
   }
 
   //Inferno Map Button
-  InfernoMapButton = new Button(xM+35+lM+lM+35, yM, lM, hM, strokeColor, textColor, "Inferno", 20, 0, bRed, bGreen, bBlue);
-  InfernoMapButton.ButtonUpdate();
-  if (InfernoMapButton.isButtonPressed(mouseX, mouseY, mousePressed, InfernoMapButton) == true) {
+  InfernoButton = new Button(xM+35+lM+lM+35, yM, lM, hM, strokeColor, textColor, "Inferno", 20, 0, bRed, bGreen, bBlue);
+  if (InfernoButton.isButtonPressed(mouseX, mouseY, mousePressed, InfernoButton) == true) {
     println("Inferno Map has been selected");
     EmptyMapPic = InfernoMapPic;
+    IsMirageHighLighted = false;
+    IsDust2HighLighted = false;
+    IsInfernoHighLighted = true;
+  }
+  //Checks if Inferno is highlighted
+  if (IsInfernoHighLighted == true) {
+    InfernoHighlighted();
   }
 
   //Empty Map Button
@@ -61,10 +84,32 @@ void MapSelection() {
   if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mousePressed, EmptyMapButton) == true) {
     println("Empty Map has been selected");
   }
+
+  MirageButton.ButtonUpdate();
+  Dust2Button.ButtonUpdate();
+  InfernoButton.ButtonUpdate();
   MapDrawer();
 }
 
 void MapDrawer() {
   EmptyMapPic.resize(lP, hP);
   image (EmptyMapPic, xP, yP);
+}
+
+void MirageHighlighted() {
+  MirageButton.bRed = 0;
+  MirageButton.bGreen = 255;
+  MirageButton.bBlue = 0;
+}
+
+void Dust2Highlighted() {
+  Dust2Button.bRed = 0;
+  Dust2Button.bGreen = 255;
+  Dust2Button.bBlue = 0;
+}
+
+void InfernoHighlighted() {
+  InfernoButton.bRed = 0;
+  InfernoButton.bGreen = 255;
+  InfernoButton.bBlue = 0;
 }
