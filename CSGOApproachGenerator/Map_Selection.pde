@@ -11,10 +11,10 @@ int lM = 90;
 int hM = 30;
 
 //Position and size of Map Pics
-int xP = 25;
-int yP = 150;
-int lP = 450;
-int hP = 450;
+int xP = 50;
+int yP = 125;
+int lP = 400;
+int hP = 400;
 
 void MapSelection() {
   //Title Box
