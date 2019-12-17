@@ -4,12 +4,27 @@ Button Dust2MapButton;
 Button InfernoMapButton;
 Button EmptyMapButton;
 
+//Button Positions and Size
 int xM = 15;
 int yM = 80;
 int lM = 90;
 int hM = 30;
 
+//Position and size of Map Pics
+int xP = 25;
+int yP = 150;
+int lP = 450;
+int hP = 450;
+
 void MapSelection() {
+  //Title Box
+  fill (0, 0, 255);
+  rect(0, 0, width, 40);
+  //Title of the program at the top of the screen
+  fill(255);
+  textSize(33); 
+  textAlign(CENTER, TOP);
+  text("CS:GO APPROACH GENERATOR", width/2, 0);
   //Select a map text
   textAlign(LEFT, CENTER);
   fill(0);
@@ -21,6 +36,7 @@ void MapSelection() {
   MirageButton.ButtonUpdate();
   if (MirageButton.isButtonPressed(mouseX, mouseY, mousePressed, MirageButton) == true) {
     println("Mirage Map has been selected");
+    EmptyMapPic = MirageMapPic;
   }
 
   //Dust 2 Map Button
@@ -28,6 +44,7 @@ void MapSelection() {
   Dust2MapButton.ButtonUpdate();
   if (Dust2MapButton.isButtonPressed(mouseX, mouseY, mousePressed, Dust2MapButton) == true) {
     println("Dust2 Map has been selected");
+    EmptyMapPic = Dust2MapPic;
   }
 
   //Inferno Map Button
@@ -35,6 +52,7 @@ void MapSelection() {
   InfernoMapButton.ButtonUpdate();
   if (InfernoMapButton.isButtonPressed(mouseX, mouseY, mousePressed, InfernoMapButton) == true) {
     println("Inferno Map has been selected");
+    EmptyMapPic = InfernoMapPic;
   }
 
   //Empty Map Button
@@ -43,4 +61,10 @@ void MapSelection() {
   if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mousePressed, EmptyMapButton) == true) {
     println("Empty Map has been selected");
   }
+  MapDrawer();
+}
+
+void MapDrawer() {
+  EmptyMapPic.resize(lP, hP);
+  image (EmptyMapPic, xP, yP);
 }
