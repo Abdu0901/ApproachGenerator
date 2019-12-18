@@ -22,6 +22,9 @@ boolean IsDust2HighLighted = false;
 boolean IsInfernoHighLighted = false;
 
 void MapSelection() {
+  //calculting if mouse has just been pressed
+  boolean mouseJustPressed = mousePressed & !lastMousePressed;
+  lastMousePressed = mousePressed;
   //Title Box
   fill (0, 0, 255);
   rect(0, 0, width, 40);
@@ -38,7 +41,7 @@ void MapSelection() {
 
   //Mirage Map Button
   MirageButton = new Button(xM, yM, lM, hM, strokeColor, textColor, "Mirage", 20, 0, bRed, bGreen, bBlue);
-  if (MirageButton.isButtonPressed(mouseX, mouseY, mousePressed, MirageButton) == true) {
+  if (MirageButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, MirageButton) == true) {
     println("Mirage Map has been selected");
     EmptyMapPic = MirageMapPic;
     IsMirageHighLighted = true;
@@ -52,7 +55,7 @@ void MapSelection() {
 
   //Dust 2 Map Button
   Dust2Button = new Button(xM+lM+35, yM, lM, hM, strokeColor, textColor, "Dust 2", 20, 0, bRed, bGreen, bBlue);
-  if (Dust2Button.isButtonPressed(mouseX, mouseY, mousePressed, Dust2Button) == true) {
+  if (Dust2Button.isButtonPressed(mouseX, mouseY, mouseJustPressed, Dust2Button) == true) {
     println("Dust2 Map has been selected");
     EmptyMapPic = Dust2MapPic;
     IsMirageHighLighted = false;
@@ -66,7 +69,7 @@ void MapSelection() {
 
   //Inferno Map Button
   InfernoButton = new Button(xM+35+lM+lM+35, yM, lM, hM, strokeColor, textColor, "Inferno", 20, 0, bRed, bGreen, bBlue);
-  if (InfernoButton.isButtonPressed(mouseX, mouseY, mousePressed, InfernoButton) == true) {
+  if (InfernoButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, InfernoButton) == true) {
     println("Inferno Map has been selected");
     EmptyMapPic = InfernoMapPic;
     IsMirageHighLighted = false;
@@ -81,7 +84,7 @@ void MapSelection() {
   //Empty Map Button
   EmptyMapButton = new Button(xM+35+lM+lM+35+lM+35, yM, lM, hM, strokeColor, textColor, "", 20, 0, bRed, bGreen, bBlue);
   EmptyMapButton.ButtonUpdate();
-  if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mousePressed, EmptyMapButton) == true) {
+  if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, EmptyMapButton) == true) {
     println("Empty Map has been selected");
   }
 
