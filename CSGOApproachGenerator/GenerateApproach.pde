@@ -1,5 +1,6 @@
 //Definin variables needed or button check
 boolean lastMousePressed = false;
+boolean lastMousePressed1 = false;
 
 //Define name of a button
 Button GenerateRNGButton;
@@ -16,21 +17,27 @@ int hB = 100;
 void GenerateApproach() {
   //calculting if mouse has just been pressed
   boolean mouseJustPressed = mousePressed & !lastMousePressed;
-  lastMousePressed = mousePressed;
+  lastMousePressed1 = mousePressed;
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
   GenerateRNGButton.ButtonUpdate();
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, GenerateRNGButton) == true) {
     println("RNG Button Clicked");
-    ApproachText = "Morbi a metus. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Nullam sapien sem, ornare ac, nonummy non, lobortis a, enim. Nunc tincidunt ante vitae massa. Duis ante orci, molestie vitae, vehicula venenatis, tincidunt ac, pede. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Etiam commodo dui eget wisi. Donec iaculis gravida nulla. Donec quis nibh at felis congue commodo. Etiam bibendum elit eget erat. Morbi a metus. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Nullam sapien sem, ornare ac, nonummy non, lobortis a, enim. Nunc";
   }
   //Approach box
   fill (200);
-  rect(xB,yB,lB,hB);
-  
+  rect(xB, yB, lB, hB);
+
   //Approach Text
   fill(0);
   textAlign(LEFT, TOP);
   textSize(15);
   text("Strat Name: " + ApproachText, xB, yB, lB, hB);
+  StratDrawer();
+}
+
+void StratDrawer() {
+  //Draws the generated Strat
+  EmptyStrat.resize(lP, hP);
+  image (EmptyStrat, xP, yP);
 }
