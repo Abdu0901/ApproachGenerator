@@ -43,7 +43,7 @@ void MapSelection() {
   MirageButton = new Button(xM, yM, lM, hM, strokeColor, textColor, "Mirage", 20, 0, bRed, bGreen, bBlue);
   if (MirageButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, MirageButton) == true) {
     println("Mirage Map has been selected");
-    EmptyMapPic = MirageMapPic;
+    MirageMapSelection();
     IsMirageHighLighted = true;
     IsDust2HighLighted = false;
     IsInfernoHighLighted = false;
@@ -57,7 +57,7 @@ void MapSelection() {
   Dust2Button = new Button(xM+lM+35, yM, lM, hM, strokeColor, textColor, "Dust 2", 20, 0, bRed, bGreen, bBlue);
   if (Dust2Button.isButtonPressed(mouseX, mouseY, mouseJustPressed, Dust2Button) == true) {
     println("Dust2 Map has been selected");
-    EmptyMapPic = Dust2MapPic;
+    Dust2MapSelection();
     IsMirageHighLighted = false;
     IsDust2HighLighted = true;
     IsInfernoHighLighted = false;
@@ -71,7 +71,7 @@ void MapSelection() {
   InfernoButton = new Button(xM+35+lM+lM+35, yM, lM, hM, strokeColor, textColor, "Inferno", 20, 0, bRed, bGreen, bBlue);
   if (InfernoButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, InfernoButton) == true) {
     println("Inferno Map has been selected");
-    EmptyMapPic = InfernoMapPic;
+    InfernoMapSelection();
     IsMirageHighLighted = false;
     IsDust2HighLighted = false;
     IsInfernoHighLighted = true;
@@ -87,12 +87,6 @@ void MapSelection() {
   if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, EmptyMapButton) == true) {
     println("Empty Map has been selected");
   }
-  GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
-  GenerateRNGButton.ButtonUpdate();
-  if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, GenerateRNGButton) == true) {
-    println("RNG Button Clicked");
-    ApproachText = "Morbi a metus. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Nullam sapien sem, ornare ac, nonummy non, lobortis a, enim. Nunc tincidunt ante vitae massa. Duis ante orci, molestie vitae, vehicula venenatis, tincidunt ac, pede. Nulla accumsan, elit sit amet varius semper, nulla mauris mollis quam, tempor suscipit diam nulla vel leo. Etiam commodo dui eget wisi. Donec iaculis gravida nulla. Donec quis nibh at felis congue commodo. Etiam bibendum elit eget erat. Morbi a metus. Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Nullam sapien sem, ornare ac, nonummy non, lobortis a, enim. Nunc";
-  }
 
   MirageButton.ButtonUpdate();
   Dust2Button.ButtonUpdate();
@@ -106,20 +100,38 @@ void MapDrawer() {
   image (EmptyMapPic, xP, yP);
 }
 
+void MirageMapSelection() {
+  EmptyMapPic = MirageMapPic;
+  EmptyStrat = MirageStrat;
+}
+
+void Dust2MapSelection() {
+  EmptyMapPic = Dust2MapPic;
+  EmptyStrat = Dust2Strat;
+}
+
+void InfernoMapSelection() {
+  EmptyMapPic = InfernoMapPic;
+  EmptyStrat = InfernoStrat;
+}
+
 void MirageHighlighted() {
   MirageButton.bRed = 0;
   MirageButton.bGreen = 255;
   MirageButton.bBlue = 0;
+  EmptyStrat = MirageStrat;
 }
 
 void Dust2Highlighted() {
   Dust2Button.bRed = 0;
   Dust2Button.bGreen = 255;
   Dust2Button.bBlue = 0;
+  EmptyStrat = Dust2Strat;
 }
 
 void InfernoHighlighted() {
   InfernoButton.bRed = 0;
   InfernoButton.bGreen = 255;
   InfernoButton.bBlue = 0;
+  EmptyStrat = InfernoStrat;
 }
