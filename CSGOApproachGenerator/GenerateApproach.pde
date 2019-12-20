@@ -39,7 +39,11 @@ void GenerateApproach() {
   textSize(15);
   text("Strat Name: " + ApproachText, xB, yB, lB, hB);
 
-  if (StratNumber == 1) {
+  if (StratNumber == 0) {
+    Dust2Strat = EmptyStrat;
+    MirageStrat = EmptyStrat;
+    InfernoStrat = EmptyStrat;
+  } else if (StratNumber == 1) {
     Dust2Strat = Dust2Strat1;
     MirageStrat = MirageStrat1;
     InfernoStrat = InfernoStrat1;
@@ -66,6 +70,6 @@ void GenerateApproach() {
 
 void StratDrawer() {
   //Draws the generated Strat
-  EmptyStrat.resize(lP, hP);
-  image (EmptyStrat, xP, yP);
+  DrawStrat.resize(lP, hP);
+  image (DrawStrat, xP, yP);
 }

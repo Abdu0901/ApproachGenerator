@@ -101,37 +101,40 @@ void MapDrawer() {
 }
 
 void MirageMapSelection() {
+  StratNumber = 0;
   EmptyMapPic = MirageMapPic;
-  EmptyStrat = MirageStrat;
+  DrawStrat = MirageStrat;
 }
 
 void Dust2MapSelection() {
+  StratNumber = 0;
   EmptyMapPic = Dust2MapPic;
-  EmptyStrat = Dust2Strat;
+  DrawStrat = Dust2Strat;
 }
 
 void InfernoMapSelection() {
+  StratNumber = 0;
   EmptyMapPic = InfernoMapPic;
-  EmptyStrat = InfernoStrat;
+  DrawStrat = InfernoStrat;
 }
 
 void MirageHighlighted() {
   MirageButton.bRed = 0;
   MirageButton.bGreen = 255;
   MirageButton.bBlue = 0;
-  EmptyStrat = MirageStrat;
+  DrawStrat = MirageStrat;
 }
 
 void Dust2Highlighted() {
   Dust2Button.bRed = 0;
   Dust2Button.bGreen = 255;
   Dust2Button.bBlue = 0;
-  EmptyStrat = Dust2Strat;
+  DrawStrat = Dust2Strat;
 }
 
 void InfernoHighlighted() {
   InfernoButton.bRed = 0;
   InfernoButton.bGreen = 255;
   InfernoButton.bBlue = 0;
-  EmptyStrat = InfernoStrat;
+  DrawStrat = InfernoStrat;
 }

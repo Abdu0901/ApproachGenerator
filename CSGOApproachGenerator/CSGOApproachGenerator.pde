@@ -19,6 +19,7 @@ PImage Dust2MapPic;
 PImage MirageMapPic;
 PImage InfernoMapPic;
 PImage EmptyStrat;
+PImage DrawStrat;
 
 //Mirage Strats Pics
 PImage MirageStrat;
@@ -50,6 +51,7 @@ void setup() {
   MirageMapPic = loadImage("maps/de_mirage_map.png");
   InfernoMapPic = loadImage("maps/de_inferno_map.png");
   EmptyStrat = loadImage("maps/strats/EmptyStrat.png");
+  DrawStrat = loadImage("maps/strats/EmptyStrat.png");
   //Dust2 Strats
   Dust2Strat1 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat1.png");
   Dust2Strat2 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat2.png");
