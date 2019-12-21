@@ -10,8 +10,11 @@ int strokeColor = 0;
 //Brightness of text used in buttons
 int textColor = 0;
 
+//Color of the screen background
+int backGroundColor = 255;
+
 //Color of buttons
-int bRed = 211, bGreen = 211, bBlue = 211;
+int bRed = 150, bGreen = 150, bBlue = 150;
 
 //Map Pictures
 PImage EmptyMapPic;
@@ -77,7 +80,7 @@ void setup() {
 
 void draw() {
   //BackGround color of the screen
-  background(255);
+  background(backGroundColor);
   //Calls the Map Selection Function which includes the buttons and text for that part
   MapSelection();
   GenerateApproach();

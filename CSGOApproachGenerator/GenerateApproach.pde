@@ -6,9 +6,16 @@ int StratNumber = 0;
 
 //Define name of a button
 Button GenerateRNGButton;
+Button BrightnessMode;
+
+//Boolean that checks if darkMode is on
+boolean IsDarkModeOn = false;
 
 //String that gets replaced by the generated approach and shown in the text box
 String ApproachText = "";
+
+//String that gets replaced by the selected brigtness mode and shown in the text box
+String BrightNessModeText = "";
 
 //Text Box Position and Size
 int xB = 50;
@@ -30,15 +37,16 @@ void GenerateApproach() {
     StratDrawer();
   }
   //Approach box
-  fill (200);
+  fill (bRed, bGreen, bBlue);
   rect(xB, yB, lB, hB);
 
   //Approach Text
-  fill(0);
+  fill(textColor);
   textAlign(LEFT, TOP);
   textSize(15);
   text("Strat Name: " + ApproachText, xB, yB, lB, hB);
 
+  //Checks which StratNumber is generated and applies the correct strat for each map
   if (StratNumber == 0) {
     Dust2Strat = EmptyStrat;
     MirageStrat = EmptyStrat;
@@ -65,6 +73,25 @@ void GenerateApproach() {
     InfernoStrat = InfernoStrat5;
   }
 
+  //Button that changes Brightness Mode when clicked
+  BrightnessMode = new Button(390, 50, 90, 20, strokeColor, textColor, BrightNessModeText, 10, 0, bRed, bGreen, bBlue);
+  BrightnessMode.ButtonUpdate();
+  if (BrightnessMode.isButtonPressed(mouseX, mouseY, mouseJustPressed1, BrightnessMode) == true) {
+    if (IsDarkModeOn == false) {
+      IsDarkModeOn = true;
+    } else if (IsDarkModeOn == true) {
+      IsDarkModeOn = false;
+    }
+  }
+
+  //Checks which Brightness mode is selected and runs the correct function
+  if (IsDarkModeOn == false) {
+    LightMode();
+  } else if (IsDarkModeOn == true) {
+    DarkMode();
+  } 
+
+
   StratDrawer();
 }
 
@@ -72,4 +99,18 @@ void StratDrawer() {
   //Draws the generated Strat
   DrawStrat.resize(lP, hP);
   image (DrawStrat, xP, yP);
+}
+
+void DarkMode() {
+  strokeColor = 255;
+  textColor = 255;
+  backGroundColor = 0;
+  BrightNessModeText = "Dark Mode";
+}
+
+void LightMode() {
+  strokeColor = 0;
+  textColor = 0;
+  backGroundColor = 255;
+  BrightNessModeText = "Light Mode";
 }

@@ -35,9 +35,9 @@ void MapSelection() {
   text("CS:GO APPROACH GENERATOR", width/2, 0);
   //Select a map text
   textAlign(LEFT, CENTER);
-  fill(0);
+  fill(textColor);
   textSize(20);
-  text("Select a Map:", 10, 60);
+  text("Select a Map:", 15, 60);
 
   //Mirage Map Button
   MirageButton = new Button(xM, yM, lM, hM, strokeColor, textColor, "Mirage", 20, 0, bRed, bGreen, bBlue);
@@ -122,6 +122,7 @@ void MirageHighlighted() {
   MirageButton.bRed = 0;
   MirageButton.bGreen = 255;
   MirageButton.bBlue = 0;
+  MirageButton.textColor = 0;
   DrawStrat = MirageStrat;
 }
 
@@ -129,6 +130,7 @@ void Dust2Highlighted() {
   Dust2Button.bRed = 0;
   Dust2Button.bGreen = 255;
   Dust2Button.bBlue = 0;
+  Dust2Button.textColor = 0;
   DrawStrat = Dust2Strat;
 }
 
@@ -136,5 +138,6 @@ void InfernoHighlighted() {
   InfernoButton.bRed = 0;
   InfernoButton.bGreen = 255;
   InfernoButton.bBlue = 0;
+  InfernoButton.textColor = 0;
   DrawStrat = InfernoStrat;
 }
