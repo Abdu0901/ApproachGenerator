@@ -96,7 +96,7 @@ void MapSelection() {
 
 void MapDrawer() {
   //Draws the selected Map
-  EmptyMapPic.resize(lP, hP);
+  EmptyMapPic.resize(lP, hP); //skal bare hedde MapPic
   image (EmptyMapPic, xP, yP);
 }
 
