@@ -29,13 +29,18 @@ void GenerateApproach() {
   lastMousePressed1 = mousePressed;
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
-  GenerateRNGButton.ButtonUpdate();
+  //GenerateRNGButton.Update();
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) {
     StratNumber = (int) random(1, 6);
     println(StratNumber);
     println("RNG Button Clicked");
     StratDrawer();
+    GenerateRNGButton.bRed = 100;
+    GenerateRNGButton.bGreen = 100;
+    GenerateRNGButton.bBlue = 100;
+    GenerateRNGButton.textColor = 0;
   }
+  GenerateRNGButton.Update();
   //Approach box
   fill (bRed, bGreen, bBlue);
   rect(xB, yB, lB, hB);
@@ -75,7 +80,7 @@ void GenerateApproach() {
 
   //Button that changes Brightness Mode when clicked
   BrightnessMode = new Button(390, 50, 90, 20, strokeColor, textColor, BrightNessModeText, 10, 0, bRed, bGreen, bBlue);
-  BrightnessMode.ButtonUpdate();
+  BrightnessMode.Update();
   if (BrightnessMode.isButtonPressed(mouseX, mouseY, mouseJustPressed1, BrightnessMode) == true) {
     if (IsDarkModeOn == false) {
       IsDarkModeOn = true;

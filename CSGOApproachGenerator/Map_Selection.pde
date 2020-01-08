@@ -83,14 +83,14 @@ void MapSelection() {
 
   //Empty Map Button
   EmptyMapButton = new Button(xM+35+lM+lM+35+lM+35, yM, lM, hM, strokeColor, textColor, "", 20, 0, bRed, bGreen, bBlue);
-  EmptyMapButton.ButtonUpdate();
+  EmptyMapButton.Update();
   if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, EmptyMapButton) == true) {
     println("Empty Map has been selected");
   }
 
-  MirageButton.ButtonUpdate();
-  Dust2Button.ButtonUpdate();
-  InfernoButton.ButtonUpdate();
+  MirageButton.Update();
+  Dust2Button.Update();
+  InfernoButton.Update();
   MapDrawer();
 }
 
