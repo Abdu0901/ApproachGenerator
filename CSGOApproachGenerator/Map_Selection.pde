@@ -96,25 +96,25 @@ void MapSelection() {
 
 void MapDrawer() {
   //Draws the selected Map
-  EmptyMapPic.resize(lP, hP); //skal bare hedde MapPic
-  image (EmptyMapPic, xP, yP);
+  MapPic.resize(lP, hP); //skal bare hedde MapPic
+  image (MapPic, xP, yP);
 }
 
 void MirageMapSelection() {
   StratNumber = 0;
-  EmptyMapPic = MirageMapPic;
+  MapPic = MirageMapPic;
   DrawStrat = MirageStrat;
 }
 
 void Dust2MapSelection() {
   StratNumber = 0;
-  EmptyMapPic = Dust2MapPic;
+  MapPic = Dust2MapPic;
   DrawStrat = Dust2Strat;
 }
 
 void InfernoMapSelection() {
   StratNumber = 0;
-  EmptyMapPic = InfernoMapPic;
+  MapPic = InfernoMapPic;
   DrawStrat = InfernoStrat;
 }
 

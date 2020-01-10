@@ -17,7 +17,7 @@ int backGroundColor = 255;
 int bRed = 150, bGreen = 150, bBlue = 150;
 
 //Map Pictures
-PImage EmptyMapPic;
+PImage MapPic;
 PImage Dust2MapPic;
 PImage MirageMapPic;
 PImage InfernoMapPic;
@@ -49,7 +49,7 @@ PImage InfernoStrat5;
 void setup() {
   size(500, 700);
   //Map Pics
-  EmptyMapPic = loadImage("maps/EmptyMapPic.png");
+  MapPic = loadImage("maps/EmptyMapPic.png");
   Dust2MapPic = loadImage("maps/de_dust2_map.png");
   MirageMapPic = loadImage("maps/de_mirage_map.png");
   InfernoMapPic = loadImage("maps/de_inferno_map.png");
