@@ -16,6 +16,11 @@ int backGroundColor = 255;
 //Color of buttons
 int bRed = 150, bGreen = 150, bBlue = 150;
 
+//Defining variables needed for button check
+boolean lastMousePressed = false;
+boolean lastMousePressed1 = false;
+boolean lastMousePressed2 = false;
+
 //Map Pictures
 PImage MapPic;
 PImage Dust2MapPic;

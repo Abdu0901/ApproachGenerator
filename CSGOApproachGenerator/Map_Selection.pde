@@ -22,7 +22,7 @@ boolean IsDust2HighLighted = false;
 boolean IsInfernoHighLighted = false;
 
 void MapSelection() {
-  //calculting if mouse has just been pressed
+  //Calculating if mouse has just been pressed
   boolean mouseJustPressed = mousePressed & !lastMousePressed;
   lastMousePressed = mousePressed;
   //Title Box

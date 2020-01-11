@@ -2,6 +2,7 @@
 CheckBox BrightnessCheck;
 
 void BrightnessMode() {
+  //Calculating if mouse has just been pressed
   boolean mouseJustPressed2 = mousePressed & !lastMousePressed2;
   lastMousePressed2 = mousePressed;
   //Button that changes Brightness Mode when clicked
