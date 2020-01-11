@@ -41,7 +41,7 @@ void GenerateApproach() {
     GenerateRNGButton.textColor = 0;
   }
   GenerateRNGButton.Update();
-  //Approach box
+  //Approach box 
   fill (bRed, bGreen, bBlue);
   rect(xB, yB, lB, hB);
 
