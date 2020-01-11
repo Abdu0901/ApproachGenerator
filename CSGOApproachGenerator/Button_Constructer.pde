@@ -47,7 +47,6 @@ class Elements {
 }
 
 class CheckBox extends Elements {
-
   //Constructor for the checkbox that includes all the variables. Needs to be placed in the same order as shown below when constructing a button.
   CheckBox(int xPos, int yPos, int wSize, int hSize, int strokeColor, int textColor, String buttonText, int textSize, int textAlign, int bRed, int bGreen, int bBlue) {
     this.xPos = xPos;
@@ -85,8 +84,6 @@ class CheckBox extends Elements {
 }
 
 class Button extends Elements {
-
-
   //Constructor for the button that includes all the variables. Needs to be placed in the same order as shown below when constructing a button.
   Button(int xPos, int yPos, int wSize, int hSize, int strokeColor, int textColor, String buttonText, int textSize, int textAlign, int bRed, int bGreen, int bBlue) {
     this.xPos = xPos;

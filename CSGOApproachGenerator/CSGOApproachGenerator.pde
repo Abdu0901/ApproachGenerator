@@ -84,4 +84,5 @@ void draw() {
   //Calls the Map Selection Function which includes the buttons and text for that part
   MapSelection();
   GenerateApproach();
+  BrightnessMode();
 }

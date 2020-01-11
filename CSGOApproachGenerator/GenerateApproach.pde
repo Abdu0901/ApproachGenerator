@@ -1,6 +1,7 @@
 //Definin variables needed or button check
 boolean lastMousePressed = false;
 boolean lastMousePressed1 = false;
+boolean lastMousePressed2 = false;
 
 int StratNumber = 0;
 
@@ -77,26 +78,6 @@ void GenerateApproach() {
     MirageStrat = MirageStrat5;
     InfernoStrat = InfernoStrat5;
   }
-
-  //Button that changes Brightness Mode when clicked
-  BrightnessMode = new Button(390, 50, 90, 20, strokeColor, textColor, BrightNessModeText, 10, 0, bRed, bGreen, bBlue);
-  BrightnessMode.Update();
-  if (BrightnessMode.isButtonPressed(mouseX, mouseY, mouseJustPressed1, BrightnessMode) == true) {
-    if (IsDarkModeOn == false) {
-      IsDarkModeOn = true;
-    } else if (IsDarkModeOn == true) {
-      IsDarkModeOn = false;
-    }
-  }
-
-  //Checks which Brightness mode is selected and runs the correct function
-  if (IsDarkModeOn == false) {
-    LightMode();
-  } else if (IsDarkModeOn == true) {
-    DarkMode();
-  } 
-
-
   StratDrawer();
 }
 
@@ -104,18 +85,4 @@ void StratDrawer() {
   //Draws the generated Strat
   DrawStrat.resize(lP, hP);
   image (DrawStrat, xP, yP);
-}
-
-void DarkMode() {
-  strokeColor = 255;
-  textColor = 255;
-  backGroundColor = 0;
-  BrightNessModeText = "Dark Mode";
-}
-
-void LightMode() {
-  strokeColor = 0;
-  textColor = 0;
-  backGroundColor = 255;
-  BrightNessModeText = "Light Mode";
 }
