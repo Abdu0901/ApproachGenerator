@@ -1,5 +1,11 @@
+//Define name of a button
+Button BrightnessMode;
+
 //Define name of a Checkbox
 CheckBox BrightnessCheck;
+
+//Boolean that checks if darkMode is on
+boolean IsDarkModeOn = false;
 
 //Check Box Position and Size
 int xC = 460;

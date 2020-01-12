@@ -3,10 +3,6 @@ int StratNumber = 0;
 
 //Define name of a button
 Button GenerateRNGButton;
-Button BrightnessMode;
-
-//Boolean that checks if darkMode is on
-boolean IsDarkModeOn = false;
 
 //String that gets replaced by the generated approach and shown in the text box
 String ApproachText = "";
