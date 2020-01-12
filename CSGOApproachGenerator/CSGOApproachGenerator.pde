@@ -22,7 +22,7 @@ boolean lastMousePressed1 = false;
 boolean lastMousePressed2 = false;
 
 //Red X Picture
-PImage RedX;
+PImage BlackX;
 
 //Map Pictures
 PImage MapPic;
@@ -84,8 +84,8 @@ void setup() {
   InfernoStrat3 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat3.png");
   InfernoStrat4 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat4.png");
   InfernoStrat5 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
-  //Red X
-  RedX = loadImage("RedX.png");
+  //Black X
+  BlackX = loadImage("BlackX.png");
 }
 
 void draw() {

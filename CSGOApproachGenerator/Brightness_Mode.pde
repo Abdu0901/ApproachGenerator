@@ -36,8 +36,8 @@ void DarkMode() {
   strokeColor = 255;
   textColor = 255;
   backGroundColor = 0;
-  RedX.resize(lC, hC);
-  image (RedX, xC, yC);
+  BlackX.resize(lC, hC);
+  image (BlackX, xC, yC);
 }
 
 void LightMode() {
