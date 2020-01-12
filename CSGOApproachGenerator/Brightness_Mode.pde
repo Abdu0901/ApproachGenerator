@@ -1,6 +1,12 @@
 //Define name of a Checkbox
 CheckBox BrightnessCheck;
 
+//Check Box Position and Size
+int xC = 460;
+int yC = 50;
+int lC = 20;
+int hC = 20;
+
 void BrightnessMode() {
   //Calculating if mouse has just been pressed
   boolean mouseJustPressed2 = mousePressed & !lastMousePressed2;
@@ -16,30 +22,26 @@ void BrightnessMode() {
     }
   }
 
-  BrightnessCheck = new CheckBox(460, 50, 20, 20, strokeColor, textColor, "", 15, 0, bRed, bGreen, bBlue);
+  BrightnessCheck = new CheckBox(xC, yC, lC, hC, strokeColor, textColor, "", 15, 0, 255, 255, 255);
+  BrightnessCheck.Update();
   //Checks which Brightness mode is selected and runs the correct function
   if (IsDarkModeOn == false) {
     LightMode();
   } else if (IsDarkModeOn == true) {
     DarkMode();
   }
-  BrightnessCheck.Update();
 }
 
 void DarkMode() {
   strokeColor = 255;
   textColor = 255;
   backGroundColor = 0;
-  BrightnessCheck.bRed = 0;
-  BrightnessCheck.bGreen = 255;
-  BrightnessCheck.bBlue = 0;
+  RedX.resize(lC, hC);
+  image (RedX, xC, yC);
 }
 
 void LightMode() {
   strokeColor = 0;
   textColor = 0;
   backGroundColor = 255;
-  BrightnessCheck.bRed = 255;
-  BrightnessCheck.bGreen = 0;
-  BrightnessCheck.bBlue = 0;
 }
