@@ -71,14 +71,14 @@ void setup() {
 
   //Inferno strats
   InfernoStrat = loadImage("maps/strats/EmptyStrat.png");
-  InfernoStrat1 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat1.png");
-  InfernoStrat2 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat2.png");
-  InfernoStrat3 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat3.png");
-  InfernoStrat4 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat4.png");
-  InfernoStrat5 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
-  InfernoStrat6 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
-  InfernoStrat7 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
-  InfernoStrat8 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
+  InfernoStrat1 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat1.png");
+  InfernoStrat2 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat2.png");
+  InfernoStrat3 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat3.png");
+  InfernoStrat4 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat4.png");
+  InfernoStrat5 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat5.png");
+  InfernoStrat6 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat6.png");
+  InfernoStrat7 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat7.png");
+  InfernoStrat8 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat8.png");
 
   //Black X
   BlackX = loadImage("BlackX.png");
