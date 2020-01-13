@@ -42,7 +42,7 @@ void GenerateApproach() {
   fill(textColor);
   textAlign(LEFT, TOP);
   textSize(15);
-  text("Strat Name: " + ApproachText, xB, yB, lB, hB);
+  text("Strat Name: " + ApproachText + " " + "Bonus Modifier:", xB, yB, lB, hB);
 
   //Checks which StratNumber is generated and applies the correct strat for each map
   if (StratNumber == 0) {
