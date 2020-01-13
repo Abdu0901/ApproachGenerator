@@ -152,7 +152,7 @@ void InfernoHighlighted() {
 }
 
 void DeselectAllHighlights() {
-  //Helps to recolour the map buttons' background
+  //Deselects all maps by setting them to false which also helps resets the map to default color
   IsMirageHighLighted = false;
   IsDust2HighLighted = false;
   IsInfernoHighLighted = false;

@@ -22,7 +22,6 @@ void GenerateApproach() {
   lastMousePressed1 = mousePressed;
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
-  //GenerateRNGButton.Update();
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) {
     StratNumber = (int) random(1, StratNumberLength+1);
     println(StratNumber);
@@ -34,6 +33,7 @@ void GenerateApproach() {
     GenerateRNGButton.bBlue = 100;
   }
   GenerateRNGButton.Update();
+  
   //Approach box 
   fill (bRed, bGreen, bBlue);
   rect(xB, yB, lB, hB);
