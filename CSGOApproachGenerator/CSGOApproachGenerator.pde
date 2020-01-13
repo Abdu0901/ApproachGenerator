@@ -40,7 +40,7 @@ PImage MirageStrat, MirageStrat1, MirageStrat2, MirageStrat3, MirageStrat4, Mira
 PImage Dust2Strat, Dust2Strat1, Dust2Strat2, Dust2Strat3, Dust2Strat4, Dust2Strat5;
 
 //Inferno Strats Pics
-PImage InfernoStrat, InfernoStrat1, InfernoStrat2, InfernoStrat3, InfernoStrat4, InfernoStrat5;
+PImage InfernoStrat, InfernoStrat1, InfernoStrat2, InfernoStrat3, InfernoStrat4, InfernoStrat5, InfernoStrat6, InfernoStrat7, InfernoStrat8;
 
 void setup() {
   size(500, 700);
@@ -52,7 +52,7 @@ void setup() {
 
   EmptyStrat = loadImage("maps/strats/EmptyStrat.png");
   DrawStrat = loadImage("maps/strats/EmptyStrat.png");
-  
+
   //Dust2 Strats
   Dust2Strat1 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat1.png");
   Dust2Strat2 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat2.png");
@@ -60,7 +60,7 @@ void setup() {
   Dust2Strat4 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat4.png");
   Dust2Strat5 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
   Dust2Strat = loadImage("maps/strats/EmptyStrat.png");
-  
+
   //Mirage Strats
   MirageStrat = loadImage("maps/strats/EmptyStrat.png");
   MirageStrat1 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat1.png");
@@ -68,7 +68,7 @@ void setup() {
   MirageStrat3 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat3.png");
   MirageStrat4 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat4.png");
   MirageStrat5 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
-  
+
   //Inferno strats
   InfernoStrat = loadImage("maps/strats/EmptyStrat.png");
   InfernoStrat1 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat1.png");
@@ -76,7 +76,10 @@ void setup() {
   InfernoStrat3 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat3.png");
   InfernoStrat4 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat4.png");
   InfernoStrat5 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
- 
+  InfernoStrat6 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
+  InfernoStrat7 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
+  InfernoStrat8 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
+
   //Black X
   BlackX = loadImage("BlackX.png");
 }

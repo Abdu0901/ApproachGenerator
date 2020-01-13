@@ -46,6 +46,7 @@ void MapSelection() {
     DeselectAllHighlights();
     MirageMapSelection();
     IsMirageHighLighted = true;
+    StratNumberLength = 5;
   }
   //Checks if Mirage is highlighted
   if (IsMirageHighLighted == true) {
@@ -59,6 +60,7 @@ void MapSelection() {
     DeselectAllHighlights();
     Dust2MapSelection();
     IsDust2HighLighted = true;
+    StratNumberLength = 5;
   }
   //Checks if Dust2 is highlighted
   if (IsDust2HighLighted == true) {
@@ -72,6 +74,7 @@ void MapSelection() {
     DeselectAllHighlights();
     InfernoMapSelection();
     IsInfernoHighLighted = true;
+    StratNumberLength = 8;
   }
   //Checks if Inferno is highlighted
   if (IsInfernoHighLighted == true) {
