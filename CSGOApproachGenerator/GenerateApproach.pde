@@ -25,10 +25,10 @@ void GenerateApproach() {
     println(StratNumber);
     println("RNG Button Clicked");
     StratDrawer();
+    //Darkens the background for visual feedback
     GenerateRNGButton.bRed = 100;
     GenerateRNGButton.bGreen = 100;
     GenerateRNGButton.bBlue = 100;
-    GenerateRNGButton.textColor = 0;
   }
   GenerateRNGButton.Update();
   //Approach box 

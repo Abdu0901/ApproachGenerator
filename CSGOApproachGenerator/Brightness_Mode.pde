@@ -27,7 +27,6 @@ void BrightnessMode() {
       IsDarkModeOn = false;
     }
   }
-
   BrightnessCheck = new CheckBox(xC, yC, lC, hC, strokeColor, textColor, "", 15, 0, 255, 255, 255);
   BrightnessCheck.Update();
   //Checks which Brightness mode is selected and runs the correct function
