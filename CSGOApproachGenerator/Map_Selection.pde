@@ -46,7 +46,7 @@ void MapSelection() {
     DeselectAllHighlights();
     MirageMapSelection();
     IsMirageHighLighted = true;
-    StratNumberLength = 5;
+    StratNumberLength = 6;
   }
   //Checks if Mirage is highlighted
   if (IsMirageHighLighted == true) {

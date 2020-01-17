@@ -34,7 +34,7 @@ PImage EmptyStrat;
 PImage DrawStrat;
 
 //Mirage Strats Pics
-PImage MirageStrat, MirageStrat1, MirageStrat2, MirageStrat3, MirageStrat4, MirageStrat5;
+PImage MirageStrat, MirageStrat1, MirageStrat2, MirageStrat3, MirageStrat4, MirageStrat5, MirageStrat6;
 
 //Dust 2 Strats Pics
 PImage Dust2Strat, Dust2Strat1, Dust2Strat2, Dust2Strat3, Dust2Strat4, Dust2Strat5;
@@ -63,11 +63,12 @@ void setup() {
 
   //Mirage Strats
   MirageStrat = loadImage("maps/strats/EmptyStrat.png");
-  MirageStrat1 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat1.png");
-  MirageStrat2 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat2.png");
-  MirageStrat3 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat3.png");
-  MirageStrat4 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat4.png");
-  MirageStrat5 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
+  MirageStrat1 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat1.png");
+  MirageStrat2 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat2.png");
+  MirageStrat3 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat3.png");
+  MirageStrat4 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat4.png");
+  MirageStrat5 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat5.png");
+  MirageStrat6 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat6.png");
 
   //Inferno strats
   InfernoStrat = loadImage("maps/strats/EmptyStrat.png");
