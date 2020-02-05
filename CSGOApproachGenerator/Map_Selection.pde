@@ -21,6 +21,9 @@ boolean IsMirageHighLighted = false;
 boolean IsDust2HighLighted = false;
 boolean IsInfernoHighLighted = false;
 
+//which map is selected
+PImage MapPicSelected;
+
 void MapSelection() {
   //Determines if mouse has just been pressed
   boolean mouseJustPressed = mousePressed & !lastMousePressed;
@@ -96,29 +99,27 @@ void MapSelection() {
 
 void MapDrawer() {
   //Draws the selected Map
-  MapPic.resize(lP, hP); //skal bare hedde MapPic
+  MapPic.resize(lP, hP);
   image (MapPic, xP, yP);
 }
 
 void MirageMapSelection() {
   //Resets strat drawing for Mirage
-  StratNumber = 0;
-  MapPic = MirageMapPic;
-  DrawStrat = MirageStrat;
+  
+  MapPic = MapPics.get(0);
 }
 
 void Dust2MapSelection() {
   //Resets strat drawing for Dust2
-  StratNumber = 0;
-  MapPic = Dust2MapPic;
-  DrawStrat = Dust2Strat;
+ 
+  MapPic = MapPics.get(1);
 }
 
 void InfernoMapSelection() {
   //Resets strat drawing for Mirage
-  StratNumber = 0;
-  MapPic = InfernoMapPic;
-  DrawStrat = InfernoStrat;
+  
+  MapPic = MapPics.get(2);
+  
 }
 
 void MirageHighlighted() {
@@ -128,7 +129,8 @@ void MirageHighlighted() {
   MirageButton.bBlue = 0;
   //Darkens text colour if selected even in dark mode for better visuals
   MirageButton.textColor = 0;
-  DrawStrat = MirageStrat;
+  MapPicSelected = MapPics.get(0);
+  
 }
 
 void Dust2Highlighted() {

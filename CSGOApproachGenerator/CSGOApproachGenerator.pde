@@ -1,5 +1,12 @@
 //Abdullah, Julius and Sebastian 3D2. CS:GO Approach Generator
 
+import java.io.File;
+
+ArrayList <PImage> MapPics = new ArrayList <PImage>();
+ArrayList <PImage> MirageStratPics = new ArrayList <PImage>();
+ArrayList <PImage> Dust2StratPics = new ArrayList <PImage>();
+ArrayList <PImage> InfernoStratPics = new ArrayList <PImage>();
+
 //directory for pictures and strats:
 // example 'maps/"de_dust2_map.png"'
 // example 'maps/strats/de_dust2_strats/de_dust2_map_strat1.png"'
@@ -23,63 +30,70 @@ boolean lastMousePressed2 = false;
 
 //Black X Picture
 PImage BlackX;
-
-//Map Pictures
 PImage MapPic;
-PImage Dust2MapPic;
-PImage MirageMapPic;
-PImage InfernoMapPic;
-
-PImage EmptyStrat;
 PImage DrawStrat;
 
-//Mirage Strats Pics
-PImage MirageStrat, MirageStrat1, MirageStrat2, MirageStrat3, MirageStrat4, MirageStrat5, MirageStrat6;
-
-//Dust 2 Strats Pics
-PImage Dust2Strat, Dust2Strat1, Dust2Strat2, Dust2Strat3, Dust2Strat4, Dust2Strat5;
-
-//Inferno Strats Pics
-PImage InfernoStrat, InfernoStrat1, InfernoStrat2, InfernoStrat3, InfernoStrat4, InfernoStrat5, InfernoStrat6, InfernoStrat7, InfernoStrat8;
-
-void setup() {
+void setup() { 
   size(500, 700);
-  //Map Pics
-  MapPic = loadImage("maps/EmptyMapPic.png");
-  Dust2MapPic = loadImage("maps/de_dust2_map.png");
-  MirageMapPic = loadImage("maps/de_mirage_map.png");
-  InfernoMapPic = loadImage("maps/de_inferno_map.png");
+  //Maps Amount
+  File MapDirectory = new File("/Users/abdullahmoussa/Documents/GitHub/ApproachGenerator/CSGOApproachGenerator/maps");
+  String[] MapsFiles = MapDirectory.list();
+  int MapsAmount = 0;
+  for (int i = 0; i<MapsFiles.length; i++) {
+    if (MapsFiles[i].endsWith(".png")) {
+      MapsAmount++;
+    }
+  }
 
-  EmptyStrat = loadImage("maps/strats/EmptyStrat.png");
-  DrawStrat = loadImage("maps/strats/EmptyStrat.png");
+  //Mirage Amount
+  File MirageDirectory = new File("/Users/abdullahmoussa/Documents/GitHub/ApproachGenerator/CSGOApproachGenerator/maps/strats/de_mirage_strats");
+  String[] MirageFiles = MirageDirectory.list();
+  int MirageStratAmount = 0;
+  for (int i = 0; i<MirageFiles.length; i++) {
+    if (MirageFiles[i].endsWith(".png")) {
+      MirageStratAmount++;
+    }
+  }
 
-  //Dust2 Strats
-  Dust2Strat1 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat1.png");
-  Dust2Strat2 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat2.png");
-  Dust2Strat3 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat3.png");
-  Dust2Strat4 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat4.png");
-  Dust2Strat5 = loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat5.png");
-  Dust2Strat = loadImage("maps/strats/EmptyStrat.png");
+  //Dust2 Amount
+  File Dust2Directory = new File("/Users/abdullahmoussa/Documents/GitHub/ApproachGenerator/CSGOApproachGenerator/maps/strats/de_dust2_strats");
+  String[] Dust2Files = Dust2Directory.list();
+  int Dust2StratAmount = 0;
+  for (int i = 0; i<Dust2Files.length; i++) {
+    if (Dust2Files[i].endsWith(".png")) {
+      Dust2StratAmount++;
+    }
+  }
 
-  //Mirage Strats
-  MirageStrat = loadImage("maps/strats/EmptyStrat.png");
-  MirageStrat1 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat1.png");
-  MirageStrat2 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat2.png");
-  MirageStrat3 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat3.png");
-  MirageStrat4 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat4.png");
-  MirageStrat5 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat5.png");
-  MirageStrat6 = loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat6.png");
+  //Infenro Amount
+  File InfernoDirectory = new File("/Users/abdullahmoussa/Documents/GitHub/ApproachGenerator/CSGOApproachGenerator/maps/strats/de_inferno_strats");
+  String[] InfernoFiles = InfernoDirectory.list();
+  int InfernoStratAmount = 0;
+  for (int i = 0; i<InfernoFiles.length; i++) {
+    if (InfernoFiles[i].endsWith(".png")) {
+      InfernoStratAmount++;
+    }
+  }
 
-  //Inferno strats
-  InfernoStrat = loadImage("maps/strats/EmptyStrat.png");
-  InfernoStrat1 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat1.png");
-  InfernoStrat2 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat2.png");
-  InfernoStrat3 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat3.png");
-  InfernoStrat4 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat4.png");
-  InfernoStrat5 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat5.png");
-  InfernoStrat6 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat6.png");
-  InfernoStrat7 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat7.png");
-  InfernoStrat8 = loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat8.png");
+  //for loop that goes through all maps and loads their coresponding images in arraylist 
+  for (int i = 1; i < MapsAmount; i++) {
+    MapPics.add(loadImage("maps"+i+".png"));
+  }
+
+  //An Arraylist + for loop that goes through all mirage strats and loads their coresponding images
+  for (int i = 1; i < MirageStratAmount; i++) {
+    MirageStratPics.add(loadImage("maps/strats/de_mirage_strats/de_mirage_map_strat"+i+".png"));
+  }
+
+  //An Arraylist + for loop that goes through all dust 2 strats and loads their coresponding images
+  for (int i = 1; i < Dust2StratAmount; i++) {
+    Dust2StratPics.add(loadImage("maps/strats/de_dust2_strats/de_dust2_map_strat"+i+".png"));
+  }
+
+  //An Arraylist + for loop that goes through all infrno strats and loads their coresponding images
+  for (int i = 1; i < InfernoStratAmount; i++) {
+    InfernoStratPics.add(loadImage("maps/strats/de_inferno_strats/de_inferno_map_strat"+i+".png"));
+  }
 
   //Black X
   BlackX = loadImage("BlackX.png");
@@ -90,7 +104,7 @@ void draw() {
   background(backGroundColor);
 
   //Calls the Map Selection Function which includes the buttons and text for that part
-  MapSelection();
-  GenerateApproach();
-  BrightnessMode();
+  //MapSelection();
+  //GenerateApproach();
+  //BrightnessMode();
 }
