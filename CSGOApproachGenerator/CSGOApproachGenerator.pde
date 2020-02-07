@@ -1,9 +1,6 @@
 //Abdullah, Julius and Sebastian 3D2. CS:GO Approach Generator
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 ArrayList <PImage> MapPics = new ArrayList <PImage>();
 ArrayList <PImage> MirageStratPics = new ArrayList <PImage>();
@@ -13,10 +10,10 @@ ArrayList <PImage> InfernoStratPics = new ArrayList <PImage>();
 //directory
 // example 'maps/"de_dust2_map.png"'
 // example 'maps/strats/de_dust2_strats/de_dust2_map_strat1.png"'
+
 String UserDirectory;
 
 boolean start = false;
-
 
 //Stroke color of the buttons
 int strokeColor = 0;
@@ -41,15 +38,14 @@ PImage MapPic;
 PImage DrawStrat;
 
 void setup() { 
-
   size(500, 700);
-  selectFolder("Select program folder:","folderSelected");
+  selectFolder("Select program folder:", "folderSelected");
 }
 
+//Makes the user pick program folder before program starts
 void folderSelected(File UserSelection) {
-  if(UserSelection == null) {
-   println("the window was closed or user hit cancel");
-   
+  if (UserSelection == null) {
+    println("the window was closed or user hit cancel");
   } else {
     println("User selected " + UserSelection.getAbsolutePath());
     UserDirectory = UserSelection.getAbsolutePath();
@@ -58,12 +54,13 @@ void folderSelected(File UserSelection) {
   }
 }
 
+//Loads the pictures of boths strats and maps
 void loadPictures() {
   //Maps picture amount
   File MapDirectory = new File(UserDirectory + File.separator + "maps");
   String[] MapsFiles = MapDirectory.list();
-println("MapDirectory.list()= " + MapDirectory.list());
-println("MapsFiles = "+ MapsFiles);
+  println("MapDirectory.list()= " + MapDirectory.list());
+  println("MapsFiles = "+ MapsFiles);
   int MapsAmount = 0;
   for (int i = 0; i<MapsFiles.length; i++) {
     if (MapsFiles[i].endsWith(".png")) {
@@ -137,10 +134,7 @@ void draw() {
 void Start() {
   //BackGround color of the screen
   background(BackGroundColor);
-  
   //finds and loads pictures
-  
-  
   //Calls the Map Selection Function which includes the buttons and text for that part
   MapSelection();
   GenerateApproach();

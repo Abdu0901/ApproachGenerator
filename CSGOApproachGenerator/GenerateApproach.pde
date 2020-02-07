@@ -16,6 +16,9 @@ int yB = 590;
 int lB = 400;
 int hB = 100;
 
+//Boolean to check if strats should be drawed
+Boolean DrawStrats = false;
+
 void GenerateApproach() {
   //Calculating if mouse has just been pressed
   boolean mouseJustPressed1 = mousePressed & !lastMousePressed1;
@@ -23,37 +26,42 @@ void GenerateApproach() {
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) {
-    if (MapPicSelected==MapPics.get(0)) {
+    if (MapPic==MapPics.get(0)) {
       DrawStrat = MirageStratPics.get((int)random(1, MirageStratPics.size()));
-    } else if (MapPicSelected==MapPics.get(1)) {
+      println("miragestratpicssize= " + MirageStratPics.size());
+    } else if (MapPic==MapPics.get(1)) {
       DrawStrat = Dust2StratPics.get((int)random(1, Dust2StratPics.size()));
-    } else if (MapPicSelected==MapPics.get(2)) {
+    } else if (MapPic==MapPics.get(2)) {
       DrawStrat = InfernoStratPics.get((int)random(1, InfernoStratPics.size()));
     }
-      println("RNG Button Clicked");
-      StratDrawer();
-      //Darkens the background for visual feedback
-      GenerateRNGButton.bRed = 100;
-      GenerateRNGButton.bGreen = 100;
-      GenerateRNGButton.bBlue = 100;
-    }
-    GenerateRNGButton.Update();
-
-    //Approach box 
-    fill (bRed, bGreen, bBlue);
-    rect(xB, yB, lB, hB);
-
-    //Approach Text
-    fill(textColor);
-    textAlign(LEFT, TOP);
-    textSize(15);
-    text("Strat Name: " + ApproachText + " " + "Bonus Modifier:", xB, yB, lB, hB);
-
-    //StratDrawer();
+    println("RNG Button Clicked");
+    println("mappic" + MapPic);
+    DrawStrats = true;
+    //Darkens the background for visual feedback
+    GenerateRNGButton.bRed = 100;
+    GenerateRNGButton.bGreen = 100;
+    GenerateRNGButton.bBlue = 100;
   }
+  GenerateRNGButton.Update();
 
-  void StratDrawer() {
-    //Draws the generated Strat
-    DrawStrat.resize(lP, hP);
-    image (DrawStrat, xP, yP);
+  //Approach box 
+  fill (bRed, bGreen, bBlue);
+  rect(xB, yB, lB, hB);
+
+  //Approach Text
+  fill(textColor);
+  textAlign(LEFT, TOP);
+  textSize(15);
+  text("Strat Name: " + ApproachText + " " + "Bonus Modifier:", xB, yB, lB, hB);
+  
+  //Checks if DrawStrats is true and calls the StratDrawer function
+  if (DrawStrats == true) {
+    StratDrawer();
   }
+}
+
+void StratDrawer() {
+  //Draws the generated Strat
+  DrawStrat.resize(lP, hP);
+  image (DrawStrat, xP, yP);
+}
