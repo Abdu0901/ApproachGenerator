@@ -59,16 +59,12 @@ void loadPictures() {
   //Maps picture amount
   File MapDirectory = new File(UserDirectory + File.separator + "maps");
   String[] MapsFiles = MapDirectory.list();
-  println("MapDirectory.list()= " + MapDirectory.list());
-  println("MapsFiles = "+ MapsFiles);
   int MapsAmount = 0;
   for (int i = 0; i<MapsFiles.length; i++) {
     if (MapsFiles[i].endsWith(".png")) {
-      println("imagefound " + MapsFiles[i].endsWith(".png"));
       MapsAmount++;
     }
   }
-  println("MapsAmount" + MapsAmount);
 
   //Mirage strat picture amount
   File MirageDirectory = new File(UserDirectory + File.separator + "maps" + File.separator + "strats" + File.separator + "de_mirage_strats");
@@ -76,7 +72,6 @@ void loadPictures() {
   int MirageStratAmount = 0;
   for (int i = 0; i<MirageFiles.length; i++) {
     if (MirageFiles[i].endsWith(".png")) {
-      println("image found mi " + MirageFiles[i].endsWith(".png"));
       MirageStratAmount++;
     }
   }

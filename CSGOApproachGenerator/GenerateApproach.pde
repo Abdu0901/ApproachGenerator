@@ -28,14 +28,12 @@ void GenerateApproach() {
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) {
     if (MapPic==MapPics.get(0)) {
       DrawStrat = MirageStratPics.get((int)random(1, MirageStratPics.size()));
-      println("miragestratpicssize= " + MirageStratPics.size());
     } else if (MapPic==MapPics.get(1)) {
       DrawStrat = Dust2StratPics.get((int)random(1, Dust2StratPics.size()));
     } else if (MapPic==MapPics.get(2)) {
       DrawStrat = InfernoStratPics.get((int)random(1, InfernoStratPics.size()));
     }
     println("RNG Button Clicked");
-    println("mappic" + MapPic);
     DrawStrats = true;
     //Darkens the background for visual feedback
     GenerateRNGButton.bRed = 100;
