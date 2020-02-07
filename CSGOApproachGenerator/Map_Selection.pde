@@ -49,7 +49,6 @@ void MapSelection() {
     DeselectAllHighlights();
     MirageMapSelection();
     IsMirageHighLighted = true;
-    StratNumberLength = 6;
   }
   //Checks if Mirage is highlighted
   if (IsMirageHighLighted == true) {
@@ -129,7 +128,7 @@ void MirageHighlighted() {
   MirageButton.bBlue = 0;
   //Darkens text colour if selected even in dark mode for better visuals
   MirageButton.textColor = 0;
-  MapPicSelected = MapPics.get(0);
+  
   
 }
 
@@ -140,7 +139,6 @@ void Dust2Highlighted() {
   Dust2Button.bBlue = 0;
   //Darkens text colour if selected even in dark mode for better visuals  
   Dust2Button.textColor = 0;
-  DrawStrat = Dust2Strat;
 }
 
 void InfernoHighlighted() {
@@ -150,7 +148,6 @@ void InfernoHighlighted() {
   InfernoButton.bBlue = 0;
   //Darkens text colour if selected even in dark mode for better visuals
   InfernoButton.textColor = 0;
-  DrawStrat = InfernoStrat;
 }
 
 void DeselectAllHighlights() {

@@ -40,7 +40,7 @@ void BrightnessMode() {
 void DarkMode() {
   strokeColor = 255;
   textColor = 255;
-  backGroundColor = 0;
+  BackGroundColor = 0;
   BlackX.resize(lC, hC);
   image (BlackX, xC, yC);
 }
@@ -48,5 +48,5 @@ void DarkMode() {
 void LightMode() {
   strokeColor = 0;
   textColor = 0;
-  backGroundColor = 255;
+  BackGroundColor = 255;
 }

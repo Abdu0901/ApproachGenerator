@@ -23,11 +23,11 @@ void GenerateApproach() {
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) {
-    if (MapPicSelected==0) {
+    if (MapPicSelected==MapPics.get(0)) {
       DrawStrat = MirageStratPics.get((int)random(1, MirageStratPics.size()));
-    } else if (MapPicSelected==1) {
+    } else if (MapPicSelected==MapPics.get(1)) {
       DrawStrat = Dust2StratPics.get((int)random(1, Dust2StratPics.size()));
-    } else if (MapPicSelected==2) {
+    } else if (MapPicSelected==MapPics.get(2)) {
       DrawStrat = InfernoStratPics.get((int)random(1, InfernoStratPics.size()));
     }
       println("RNG Button Clicked");
@@ -49,7 +49,7 @@ void GenerateApproach() {
     textSize(15);
     text("Strat Name: " + ApproachText + " " + "Bonus Modifier:", xB, yB, lB, hB);
 
-    StratDrawer();
+    //StratDrawer();
   }
 
   void StratDrawer() {
