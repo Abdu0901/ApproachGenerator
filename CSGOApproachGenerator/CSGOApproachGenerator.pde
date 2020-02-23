@@ -1,4 +1,6 @@
 //Abdullah, Julius and Sebastian 3D2. CS:GO Approach Generator
+import de.bezier.data.sql.*;
+import de.bezier.data.sql.mapper.*;
 
 import java.io.File;
 
