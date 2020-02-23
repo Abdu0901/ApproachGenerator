@@ -8,6 +8,7 @@ ArrayList <PImage> MapPics = new ArrayList <PImage>();
 ArrayList <PImage> MirageStratPics = new ArrayList <PImage>();
 ArrayList <PImage> Dust2StratPics = new ArrayList <PImage>();
 ArrayList <PImage> InfernoStratPics = new ArrayList <PImage>();
+
 String[] tableNames = new String[3];
 SQLite db;
 
@@ -50,6 +51,8 @@ void setup() {
   tableNames[2] = "Approach_inferno";
 
   selectFolder("Select program folder:", "folderSelected");
+  
+  //add description of which folder to select ************************
 }
 
 //Makes the user pick program folder before program starts
@@ -66,6 +69,7 @@ void folderSelected(File UserSelection) {
 
 //Loads the pictures of boths strats and maps
 void loadPictures() {
+  //maybe make the following a function to reduce clutter? *****************************************
   //Maps picture amount
   File MapDirectory = new File(UserDirectory + File.separator + "maps");
   String[] MapsFiles = MapDirectory.list();
@@ -105,7 +109,7 @@ void loadPictures() {
       InfernoStratAmount++;
     }
   }
-
+  //maybe make the following a function to reduce clutter? *****************************************
   //for loop that goes through all maps and loads their coresponding images in arraylist 
   for (int i = 1; i < MapsAmount+1; i++) {
     MapPics.add(loadImage("maps" + File.separator +"map"+i+".png"));

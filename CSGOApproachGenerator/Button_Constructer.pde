@@ -26,7 +26,6 @@ class Elements {
     return false;
   }
 
-  //Updates button
   void Update() {
     stroke(strokeColor);
     fill(bRed, bGreen, bBlue);
@@ -41,7 +40,7 @@ class Elements {
       text(buttonText, xPos + wSize, yPos + hSize/2);
     } else if (textAlign == 2) {
       textAlign(LEFT, CENTER);
-      text(buttonText, xPos, yPos + hSize/2);
+      text(buttonText, xPos+3, yPos + hSize/2);
     }
   }
 }
@@ -62,25 +61,6 @@ class CheckBox extends Elements {
     this.bGreen = bGreen;
     this.bBlue = bBlue;
   }
-
-  //Updates button
-  void Update() {
-    stroke(strokeColor);
-    fill(bRed, bGreen, bBlue);
-    rect(xPos, yPos, wSize, hSize);
-    textSize(textSize);
-    fill(textColor);
-    if (textAlign == 0) {
-      textAlign(CENTER, CENTER);
-      text(buttonText, xPos + wSize/2, yPos + hSize/2);
-    } else if (textAlign == 1) {
-      textAlign(RIGHT, CENTER);
-      text(buttonText, xPos + wSize, yPos + hSize/2);
-    } else if (textAlign == 2) {
-      textAlign(LEFT, CENTER);
-      text(buttonText, xPos, yPos + hSize/2);
-    }
-  }
 }
 
 class Button extends Elements {
@@ -98,24 +78,5 @@ class Button extends Elements {
     this.bRed = bRed;
     this.bGreen = bGreen;
     this.bBlue = bBlue;
-  }
-
-  //Updates button
-  void Update() {
-    stroke(strokeColor);
-    fill(bRed, bGreen, bBlue);
-    rect(xPos, yPos, wSize, hSize);
-    textSize(textSize);
-    fill(textColor);
-    if (textAlign == 0) {
-      textAlign(CENTER, CENTER);
-      text(buttonText, xPos + wSize/2, yPos + hSize/2);
-    } else if (textAlign == 1) {
-      textAlign(RIGHT, CENTER);
-      text(buttonText, xPos + wSize, yPos + hSize/2);
-    } else if (textAlign == 2) {
-      textAlign(LEFT, CENTER);
-      text(buttonText, xPos+3, yPos + hSize/2);
-    }
   }
 }
