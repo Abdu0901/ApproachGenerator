@@ -28,7 +28,6 @@ void GenerateApproach()
   lastMousePressed1 = mousePressed;
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
-
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) 
   {
     if (MapPic==MapPics.get(0)) {
@@ -54,7 +53,6 @@ void GenerateApproach()
     GenerateRNGButton.bGreen = 100;
     GenerateRNGButton.bBlue = 100;
   }
-
   GenerateRNGButton.Update();
 
   //Approach box 
@@ -65,7 +63,8 @@ void GenerateApproach()
   fill(textColor);
   textAlign(LEFT, TOP);
   textSize(15);
-  text("Strat Name: " + apprName + " " + "Strat Description:" + apprDesc, xB, yB, lB, hB);
+  text("Strat Name: " + apprName, xB+3, yB, lB, hB);
+  text("Strat Description: " + apprDesc, xB+3, yB+25, lB, hB);
 
   //Checks if DrawStrats is true and calls the StratDrawer function
   if (DrawStrats == true) {
