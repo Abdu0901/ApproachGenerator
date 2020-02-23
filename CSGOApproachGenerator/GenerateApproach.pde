@@ -21,18 +21,16 @@ Boolean DrawStrats = false;
 
 void GenerateApproach() 
 {
-  //Calculating if mouse has just been pressed
-  boolean mouseJustPressed1 = mousePressed & !lastMousePressed1;
   int randomNr = -1;
   int tableNr = -1;
-  
+  //Calculating if mouse has just been pressed
+  boolean mouseJustPressed1 = mousePressed & !lastMousePressed1;
   lastMousePressed1 = mousePressed;
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
-  
+
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) 
   {
-    
     if (MapPic==MapPics.get(0)) {
       randomNr = (int)random(1, MirageStratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
       DrawStrat = MirageStratPics.get(randomNr);
@@ -46,11 +44,9 @@ void GenerateApproach()
       DrawStrat = InfernoStratPics.get(randomNr);
       tableNr = 2;
     }
-  
-    
-    if(tableNr != -1 || randomNr != -1) getData(randomNr, tableNr);
-    
-    
+
+    if (tableNr != -1 || randomNr != -1) getData(randomNr, tableNr);
+
     println("RNG Button Clicked");
     DrawStrats = true;
     //Darkens the background for visual feedback
@@ -58,9 +54,7 @@ void GenerateApproach()
     GenerateRNGButton.bGreen = 100;
     GenerateRNGButton.bBlue = 100;
   }
-  
-  
-  
+
   GenerateRNGButton.Update();
 
   //Approach box 
@@ -71,8 +65,8 @@ void GenerateApproach()
   fill(textColor);
   textAlign(LEFT, TOP);
   textSize(15);
-  text("Strat Name: " + apprName + " " + "Strat Description:" + apprDesc ,xB, yB, lB, hB);
-  
+  text("Strat Name: " + apprName + " " + "Strat Description:" + apprDesc, xB, yB, lB, hB);
+
   //Checks if DrawStrats is true and calls the StratDrawer function
   if (DrawStrats == true) {
     StratDrawer();
@@ -87,23 +81,18 @@ void StratDrawer() {
 
 void getData(int Appr_ID, int tableNr)
 {
-//Connect and get data from the database mydatabase.sqlite - must be placed in same directory
+  //Connect and get data from the database mydatabase.sqlite - must be placed in same directory
   db = new SQLite( this, databaseName );  // open database file
-
   if ( db.connect() )
   {
     db.query( "SELECT Navn, Desc FROM " + tableNames[tableNr] + ";" );
-
     while (db.next())
     {
       apprName = db.getString("Navn");
       apprDesc = db.getString("Desc");
     }
-  }
-  else
-  {
+  } else {
     //Display error trying to get data from DB
-    
     //textfield1.setText("Error DB");
   }
   db.close();
