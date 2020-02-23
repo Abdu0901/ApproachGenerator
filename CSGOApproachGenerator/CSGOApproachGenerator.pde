@@ -1,19 +1,25 @@
-//Abdullah, Julius and Sebastian 3D2. CS:GO Approach Generator
 import de.bezier.data.sql.*;
-import de.bezier.data.sql.mapper.*;
+
+
+//Abdullah, Julius and Sebastian 3D2. CS:GO Approach Generator
 
 import java.io.File;
+import de.bezier.data.sql.*;
+import de.bezier.data.sql.mapper.*;
 
 ArrayList <PImage> MapPics = new ArrayList <PImage>();
 ArrayList <PImage> MirageStratPics = new ArrayList <PImage>();
 ArrayList <PImage> Dust2StratPics = new ArrayList <PImage>();
 ArrayList <PImage> InfernoStratPics = new ArrayList <PImage>();
+String[] tableNames = new String[3];
+SQLite db;
 
 //directory
 // example 'maps/"de_dust2_map.png"'
 // example 'maps/strats/de_dust2_strats/de_dust2_map_strat1.png"'
 
-String UserDirectory;
+String UserDirectory, tableName, apprName, apprDesc;
+String databaseName = "CSGO_Data.sqlite";  //variabel der indeholder databasens navn
 
 boolean start = false;
 
@@ -41,6 +47,11 @@ PImage DrawStrat;
 
 void setup() { 
   size(500, 700);
+  // Set names of appr tables
+  tableNames[0] = "Approach_mirage";
+  tableNames[1] = "Approach_dust2";
+  tableNames[2] = "Approach_inferno";
+
   selectFolder("Select program folder:", "folderSelected");
 }
 
