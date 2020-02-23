@@ -54,6 +54,7 @@ void MapSelection() {
     IsMirageHighLighted = true;
     DrawMap = true;
     DrawStrats = false;
+    tableName = tableNames[0];
   }
   //Checks if Mirage is highlighted
   if (IsMirageHighLighted == true) {
@@ -69,6 +70,7 @@ void MapSelection() {
     IsDust2HighLighted = true;
     DrawMap = true;
     DrawStrats = false;
+    tableName = tableNames[1];
   }
   //Checks if Dust2 is highlighted
   if (IsDust2HighLighted == true) {
@@ -84,6 +86,7 @@ void MapSelection() {
     IsInfernoHighLighted = true;
     DrawMap = true;
     DrawStrats = false;
+    tableName = tableNames[2];
   }
   //Checks if Inferno is highlighted
   if (IsInfernoHighLighted == true) {

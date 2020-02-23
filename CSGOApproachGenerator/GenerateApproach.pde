@@ -19,20 +19,38 @@ int hB = 100;
 //Boolean to check if strats should be drawed
 Boolean DrawStrats = false;
 
-void GenerateApproach() {
+void GenerateApproach() 
+{
   //Calculating if mouse has just been pressed
   boolean mouseJustPressed1 = mousePressed & !lastMousePressed1;
+  int randomNr = -1;
+  int tableNr = -1;
+  
   lastMousePressed1 = mousePressed;
   //Button that generates random approaches for the selected map
   GenerateRNGButton = new Button(50, 530, 400, 50, strokeColor, textColor, "GENERATE APPROACH", 35, 0, bRed, bGreen, bBlue);
-  if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) {
+  
+  if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) 
+  {
+    
     if (MapPic==MapPics.get(0)) {
-      DrawStrat = MirageStratPics.get((int)random(1, MirageStratPics.size()));
+      randomNr = (int)random(1, MirageStratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
+      DrawStrat = MirageStratPics.get(randomNr);
+      tableNr = 0;
     } else if (MapPic==MapPics.get(1)) {
-      DrawStrat = Dust2StratPics.get((int)random(1, Dust2StratPics.size()));
+      randomNr = (int)random(1, Dust2StratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
+      DrawStrat = Dust2StratPics.get(randomNr);
+      tableNr = 1;
     } else if (MapPic==MapPics.get(2)) {
-      DrawStrat = InfernoStratPics.get((int)random(1, InfernoStratPics.size()));
+      randomNr = (int)random(1, InfernoStratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
+      DrawStrat = InfernoStratPics.get(randomNr);
+      tableNr = 2;
     }
+  
+    
+    if(tableNr != -1 || randomNr != -1) getData(randomNr, tableNr);
+    
+    
     println("RNG Button Clicked");
     DrawStrats = true;
     //Darkens the background for visual feedback
@@ -40,17 +58,20 @@ void GenerateApproach() {
     GenerateRNGButton.bGreen = 100;
     GenerateRNGButton.bBlue = 100;
   }
+  
+  
+  
   GenerateRNGButton.Update();
 
   //Approach box 
-  fill (bRed, bGreen, bBlue);
+  fill(bRed, bGreen, bBlue);
   rect(xB, yB, lB, hB);
 
   //Approach Text
   fill(textColor);
   textAlign(LEFT, TOP);
   textSize(15);
-  text("Strat Name: " + ApproachText + " " + "Bonus Modifier:", xB, yB, lB, hB);
+  text("Strat Name: " + apprName + " " + "Strat Description:" + apprDesc ,xB, yB, lB, hB);
   
   //Checks if DrawStrats is true and calls the StratDrawer function
   if (DrawStrats == true) {
@@ -62,4 +83,28 @@ void StratDrawer() {
   //Draws the generated Strat
   DrawStrat.resize(lP, hP);
   image (DrawStrat, xP, yP);
+}
+
+void getData(int Appr_ID, int tableNr)
+{
+//Connect and get data from the database mydatabase.sqlite - must be placed in same directory
+  db = new SQLite( this, databaseName );  // open database file
+
+  if ( db.connect() )
+  {
+    db.query( "SELECT Navn, Desc FROM " + tableNames[tableNr] + ";" );
+
+    while (db.next())
+    {
+      apprName = db.getString("Navn");
+      apprDesc = db.getString("Desc");
+    }
+  }
+  else
+  {
+    //Display error trying to get data from DB
+    
+    //textfield1.setText("Error DB");
+  }
+  db.close();
 }
