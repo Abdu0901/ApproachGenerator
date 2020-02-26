@@ -50,28 +50,18 @@ void setup() {
   tableNames[1] = "Approach_dust2";
   tableNames[2] = "Approach_inferno";
 
-  selectFolder("Select program folder:", "folderSelected");
-  
-  //add description of which folder to select ************************
-}
+  //selectFolder("Select program folder:", "folderSelected");
 
-//Makes the user pick program folder before program starts
-void folderSelected(File UserSelection) {
-  if (UserSelection == null) {
-    println("the window was closed or user hit cancel");
-  } else {
-    println("User selected " + UserSelection.getAbsolutePath());
-    UserDirectory = UserSelection.getAbsolutePath();
-    start = true;
-    loadPictures();
-  }
+  start=true;
+  loadPictures();
 }
 
 //Loads the pictures of boths strats and maps
 void loadPictures() {
   //maybe make the following a function to reduce clutter? *****************************************
   //Maps picture amount
-  File MapDirectory = new File(UserDirectory + File.separator + "maps");
+  println(sketchPath("maps"));
+  File MapDirectory = new File(sketchPath("maps"));
   String[] MapsFiles = MapDirectory.list();
   int MapsAmount = 0;
   for (int i = 0; i<MapsFiles.length; i++) {
@@ -81,7 +71,7 @@ void loadPictures() {
   }
 
   //Mirage strat picture amount
-  File MirageDirectory = new File(UserDirectory + File.separator + "maps" + File.separator + "strats" + File.separator + "de_mirage_strats");
+  File MirageDirectory = new File(sketchPath("maps/strats/de_mirage_strats"));
   String[] MirageFiles = MirageDirectory.list();
   int MirageStratAmount = 0;
   for (int i = 0; i<MirageFiles.length; i++) {
@@ -91,7 +81,7 @@ void loadPictures() {
   }
 
   //Dust2 strat picture amount
-  File Dust2Directory = new File(UserDirectory + File.separator + "maps" + File.separator + "strats" + File.separator + "de_dust2_strats");
+  File Dust2Directory = new File(sketchPath("maps/strats/de_dust2_strats"));
   String[] Dust2Files = Dust2Directory.list();
   int Dust2StratAmount = 0;
   for (int i = 0; i<Dust2Files.length; i++) {
@@ -101,7 +91,7 @@ void loadPictures() {
   }
 
   //Inferno strat picture amount
-  File InfernoDirectory = new File(UserDirectory + File.separator + "maps" + File.separator + "strats" + File.separator + "de_inferno_strats");
+  File InfernoDirectory = new File(sketchPath("maps/strats/de_inferno_strats"));
   String[] InfernoFiles = InfernoDirectory.list();
   int InfernoStratAmount = 0;
   for (int i = 0; i<InfernoFiles.length; i++) {
