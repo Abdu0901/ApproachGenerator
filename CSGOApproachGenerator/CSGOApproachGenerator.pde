@@ -101,22 +101,22 @@ void loadPictures() {
   }
   //maybe make the following a function to reduce clutter? *****************************************
   //for loop that goes through all maps and loads their coresponding images in arraylist 
-  for (int i = 1; i < MapsAmount+1; i++) {
+  for (int i = 0; i < MapsAmount; i++) {
     MapPics.add(loadImage("maps" + File.separator +"map"+i+".png"));
   }
 
   //for loop that goes through all mirage strats and loads their corresponding images in arraylist
-  for (int i = 1; i < MirageStratAmount+1; i++) {
+  for (int i = 0; i < MirageStratAmount; i++) {
     MirageStratPics.add(loadImage("maps"+File.separator+"strats"+File.separator+ "de_mirage_strats" + File.separator + "de_mirage_map_strat"+i+".png"));
   }
 
   //for loop that goes through all dust 2 strats and loads their corresponding images in arraylist
-  for (int i = 1; i < Dust2StratAmount+1; i++) {
+  for (int i = 0; i < Dust2StratAmount; i++) {
     Dust2StratPics.add(loadImage("maps"+File.separator+"strats"+File.separator+"de_dust2_strats"+File.separator+"de_dust2_map_strat"+i+".png"));
   }
 
   //for loop that goes through all inferno strats and loads their corresponding images in arraylist
-  for (int i = 1; i < InfernoStratAmount+1; i++) {
+  for (int i = 0; i < InfernoStratAmount; i++) {
     InfernoStratPics.add(loadImage("maps"+File.separator+"strats"+File.separator+"de_inferno_strats"+File.separator+"de_inferno_map_strat"+i+".png"));
   }
 

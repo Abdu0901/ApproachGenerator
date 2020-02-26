@@ -31,20 +31,20 @@ void GenerateApproach()
   if (GenerateRNGButton.isButtonPressed(mouseX, mouseY, mouseJustPressed1, GenerateRNGButton) == true) 
   {
     if (MapPic==MapPics.get(0)) {
-      randomNr = (int)random(1, MirageStratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
+      randomNr = (int)random(0, MirageStratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
       DrawStrat = MirageStratPics.get(randomNr);
       tableNr = 0;
     } else if (MapPic==MapPics.get(1)) {
-      randomNr = (int)random(1, Dust2StratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
+      randomNr = (int)random(0, Dust2StratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
       DrawStrat = Dust2StratPics.get(randomNr);
       tableNr = 1;
     } else if (MapPic==MapPics.get(2)) {
-      randomNr = (int)random(1, InfernoStratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
+      randomNr = (int)random(0, InfernoStratPics.size());  //vælger en strat ud fra et random nummer mellem 1 og mængden af strats til givende map
       DrawStrat = InfernoStratPics.get(randomNr);
       tableNr = 2;
     }
 
-    if (tableNr != -1 || randomNr != -1) getData(randomNr, tableNr);
+    if (tableNr != -1 || randomNr != -1) getData(randomNr+1, tableNr);
 
     println("RNG Button Clicked");
     DrawStrats = true;
@@ -84,7 +84,7 @@ void getData(int Appr_ID, int tableNr)
   db = new SQLite( this, databaseName );  // open database file
   if ( db.connect() )
   {
-    db.query( "SELECT Navn, Desc FROM " + tableNames[tableNr] + ";" );
+    db.query( "SELECT Navn, Desc FROM " + tableNames[tableNr] + " where Appr_ID = " + Appr_ID + ";" );
     while (db.next())
     {
       apprName = db.getString("Navn");
