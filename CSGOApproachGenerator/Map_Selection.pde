@@ -106,8 +106,11 @@ void MapSelection() {
   }
 
   MirageButton.Update();
+  MirageButton.textUpdate();
   Dust2Button.Update();
+  Dust2Button.textUpdate();
   InfernoButton.Update();
+  InfernoButton.textUpdate();
 }
 
 void MapDrawer() {

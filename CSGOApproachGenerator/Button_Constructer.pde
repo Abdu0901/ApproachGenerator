@@ -30,33 +30,17 @@ class Elements {
     stroke(strokeColor);
     fill(bRed, bGreen, bBlue);
     rect(xPos, yPos, wSize, hSize);
-    textSize(textSize);
-    fill(textColor);
-    if (textAlign == 0) {
-      textAlign(CENTER, CENTER);
-      text(buttonText, xPos + wSize/2, yPos + hSize/2);
-    } else if (textAlign == 1) {
-      textAlign(RIGHT, CENTER);
-      text(buttonText, xPos + wSize, yPos + hSize/2);
-    } else if (textAlign == 2) {
-      textAlign(LEFT, CENTER);
-      text(buttonText, xPos+3, yPos + hSize/2);
-    }
   }
 }
 
 class CheckBox extends Elements {
   //Constructor for the checkbox that includes all the variables. Needs to be placed in the same order as shown below when constructing a button.
-  CheckBox(int xPos, int yPos, int wSize, int hSize, int strokeColor, int textColor, String buttonText, int textSize, int textAlign, int bRed, int bGreen, int bBlue) {
+  CheckBox(int xPos, int yPos, int wSize, int hSize, int strokeColor, int bRed, int bGreen, int bBlue) {
     this.xPos = xPos;
     this.yPos = yPos;
     this.wSize = wSize;
     this.hSize = hSize;
     this.strokeColor = strokeColor;
-    this.textColor = textColor;
-    this.buttonText = buttonText;
-    this.textSize = textSize;
-    this.textAlign = textAlign;
     this.bRed = bRed;
     this.bGreen = bGreen;
     this.bBlue = bBlue;
@@ -78,5 +62,19 @@ class Button extends Elements {
     this.bRed = bRed;
     this.bGreen = bGreen;
     this.bBlue = bBlue;
+  }
+  void textUpdate() {
+    textSize(textSize);
+    fill(textColor);
+    if (textAlign == 0) {
+      textAlign(CENTER, CENTER);
+      text(buttonText, xPos + wSize/2, yPos + hSize/2);
+    } else if (textAlign == 1) {
+      textAlign(RIGHT, CENTER);
+      text(buttonText, xPos + wSize, yPos + hSize/2);
+    } else if (textAlign == 2) {
+      textAlign(LEFT, CENTER);
+      text(buttonText, xPos+3, yPos + hSize/2);
+    }
   }
 }
