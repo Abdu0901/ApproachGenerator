@@ -15,6 +15,7 @@ SQLite db;
 //directory
 // example 'maps/"de_dust2_map.png"'
 // example 'maps/strats/de_dust2_strats/de_dust2_map_strat1.png"'
+// use sketchPath() to examples
 
 String UserDirectory, tableName, apprName, apprDesc;
 String databaseName = "CSGO_Data.sqlite";  //variabel der indeholder databasens navn
@@ -49,8 +50,6 @@ void setup() {
   tableNames[0] = "Approach_mirage";
   tableNames[1] = "Approach_dust2";
   tableNames[2] = "Approach_inferno";
-
-  //selectFolder("Select program folder:", "folderSelected");
 
   start=true;
   loadPictures();
@@ -99,7 +98,7 @@ void loadPictures() {
       InfernoStratAmount++;
     }
   }
-  //maybe make the following a function to reduce clutter? *****************************************
+  
   //for loop that goes through all maps and loads their coresponding images in arraylist 
   for (int i = 0; i < MapsAmount; i++) {
     MapPics.add(loadImage("maps" + File.separator +"map"+i+".png"));
@@ -133,7 +132,7 @@ void draw() {
 void Start() {
   //BackGround color of the screen
   background(BackGroundColor);
-  //finds and loads pictures
+  
   //Calls the Map Selection Function which includes the buttons and text for that part
   MapSelection();
   GenerateApproach();

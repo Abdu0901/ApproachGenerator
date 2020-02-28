@@ -92,9 +92,6 @@ void getData(int Appr_ID, int tableNr)
       apprName = db.getString("Navn");
       apprDesc = db.getString("Desc");
     }
-  } else {
-    //Display error trying to get data from DB
-    //textfield1.setText("Error DB");
   }
   db.close();
 }

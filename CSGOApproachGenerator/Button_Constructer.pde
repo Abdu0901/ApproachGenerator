@@ -7,12 +7,6 @@ class Elements {
   int bRed, bGreen, bBlue;
   //Stroke color of the button
   int strokeColor;
-  //Color of the text in the button
-  int textColor;
-  //Text Size of the text
-  int textSize;
-  //Text alignment method for the text in button
-  int textAlign;
   //Text that will be displayed on the button
   String buttonText;
 
@@ -25,7 +19,7 @@ class Elements {
     }
     return false;
   }
-
+  //updates colour, size and position of class
   void Update() {
     stroke(strokeColor);
     fill(bRed, bGreen, bBlue);
@@ -49,6 +43,13 @@ class CheckBox extends Elements {
 
 class Button extends Elements {
   //Constructor for the button that includes all the variables. Needs to be placed in the same order as shown below when constructing a button.
+    //Color of the text in the button
+  int textColor;
+  //Text Size of the text
+  int textSize;
+  //Text alignment method for the text in button
+  int textAlign;
+  
   Button(int xPos, int yPos, int wSize, int hSize, int strokeColor, int textColor, String buttonText, int textSize, int textAlign, int bRed, int bGreen, int bBlue) {
     this.xPos = xPos;
     this.yPos = yPos;
@@ -63,6 +64,7 @@ class Button extends Elements {
     this.bGreen = bGreen;
     this.bBlue = bBlue;
   }
+  //updates text properties
   void textUpdate() {
     textSize(textSize);
     fill(textColor);
