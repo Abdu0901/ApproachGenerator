@@ -7,8 +7,7 @@ class Elements {
   int bRed, bGreen, bBlue;
   //Stroke color of the button
   int strokeColor;
-  //Text that will be displayed on the button
-  String buttonText;
+
 
   //Checks if a button has been pressed
   boolean isButtonPressed(int mouseXPos, int mouseYPos, boolean isMousePressed, Button button) {
@@ -49,6 +48,8 @@ class Button extends Elements {
   int textSize;
   //Text alignment method for the text in button
   int textAlign;
+    //Text that will be displayed on the button
+  String buttonText;
   
   Button(int xPos, int yPos, int wSize, int hSize, int strokeColor, int textColor, String buttonText, int textSize, int textAlign, int bRed, int bGreen, int bBlue) {
     this.xPos = xPos;
