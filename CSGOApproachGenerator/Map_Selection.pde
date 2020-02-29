@@ -47,7 +47,7 @@ void MapSelection() {
 
   //Mirage Map Button
   MirageButton = new Button(xM, yM, lM, hM, strokeColor, textColor, "Mirage", 20, 0, bRed, bGreen, bBlue);
-  if (MirageButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, MirageButton) == true) {
+  if (MirageButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, MirageButton)) {
     println("Mirage Map has been selected");
     DeselectAllHighlights();
     MapPic = MapPics.get(0);
@@ -57,13 +57,13 @@ void MapSelection() {
     tableName = tableNames[0];
   }
   //Checks if Mirage is highlighted
-  if (IsMirageHighLighted == true) {
+  if (IsMirageHighLighted) {
     MirageHighlighted();
   }
 
   //Dust 2 Map Button
   Dust2Button = new Button(xM+lM+35, yM, lM, hM, strokeColor, textColor, "Dust 2", 20, 0, bRed, bGreen, bBlue);
-  if (Dust2Button.isButtonPressed(mouseX, mouseY, mouseJustPressed, Dust2Button) == true) {
+  if (Dust2Button.isButtonPressed(mouseX, mouseY, mouseJustPressed, Dust2Button)) {
     println("Dust2 Map has been selected");
     DeselectAllHighlights();
     MapPic = MapPics.get(1);
@@ -73,13 +73,13 @@ void MapSelection() {
     tableName = tableNames[1];
   }
   //Checks if Dust2 is highlighted
-  if (IsDust2HighLighted == true) {
+  if (IsDust2HighLighted) {
     Dust2Highlighted();
   }
 
   //Inferno Map Button
   InfernoButton = new Button(xM+35+lM+lM+35, yM, lM, hM, strokeColor, textColor, "Inferno", 20, 0, bRed, bGreen, bBlue);
-  if (InfernoButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, InfernoButton) == true) {
+  if (InfernoButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, InfernoButton)) {
     println("Inferno Map has been selected");
     DeselectAllHighlights();
     MapPic = MapPics.get(2);
@@ -89,19 +89,19 @@ void MapSelection() {
     tableName = tableNames[2];
   }
   //Checks if Inferno is highlighted
-  if (IsInfernoHighLighted == true) {
+  if (IsInfernoHighLighted) {
     InfernoHighlighted();
   }
 
   //Empty Map Button
   EmptyMapButton = new Button(xM+35+lM+lM+35+lM+35, yM, lM, hM, strokeColor, textColor, "", 20, 0, bRed, bGreen, bBlue);
   EmptyMapButton.Update();
-  if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, EmptyMapButton) == true) {
+  if (EmptyMapButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, EmptyMapButton)) {
     println("Empty Map has been selected");
   }
   
   //Checks if DrawMap is true and calls the MapDrawer function
-  if (DrawMap == true) {
+  if (DrawMap) {
     MapDrawer();
   }
 
@@ -116,7 +116,7 @@ void MapSelection() {
 void MapDrawer() {
   //Draws the selected Map
   MapPic.resize(lP, hP);
-  image (MapPic, xP, yP);
+  image(MapPic, xP, yP);
 }
 
 void MirageHighlighted() {

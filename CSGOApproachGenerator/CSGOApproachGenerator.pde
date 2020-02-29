@@ -17,7 +17,7 @@ SQLite db;
 // example 'maps/strats/de_dust2_strats/de_dust2_map_strat1.png"'
 // use sketchPath() to examples
 
-String UserDirectory, tableName, apprName, apprDesc;
+String tableName, apprName, apprDesc;
 String databaseName = "CSGO_Data.sqlite";  //variabel der indeholder databasens navn
 
 boolean start = false;
@@ -40,7 +40,7 @@ boolean lastMousePressed1 = false;
 boolean lastMousePressed2 = false;
 
 //Black X Picture
-PImage BlackX;
+PImage BlackX;  
 PImage MapPic;
 PImage DrawStrat;
 
@@ -51,13 +51,12 @@ void setup() {
   tableNames[1] = "Approach_dust2";
   tableNames[2] = "Approach_inferno";
 
-  start=true;
+  start = true;
   loadPictures();
 }
 
 //Loads the pictures of boths strats and maps
 void loadPictures() {
-  //maybe make the following a function to reduce clutter? *****************************************
   //Maps picture amount
   println(sketchPath("maps"));
   File MapDirectory = new File(sketchPath("maps"));

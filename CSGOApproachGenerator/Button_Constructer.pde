@@ -12,7 +12,7 @@ class Elements {
   //Checks if a button has been pressed
   boolean isButtonPressed(int mouseXPos, int mouseYPos, boolean isMousePressed, Button button) {
     if (mouseXPos > button.xPos && mouseXPos < button.xPos+button.wSize && mouseYPos > button.yPos && mouseYPos < button.yPos+button.hSize) {
-      if (isMousePressed == true) {
+      if (isMousePressed) {
         return true;
       }
     }
@@ -42,15 +42,15 @@ class CheckBox extends Elements {
 
 class Button extends Elements {
   //Constructor for the button that includes all the variables. Needs to be placed in the same order as shown below when constructing a button.
-    //Color of the text in the button
+  //Color of the text in the button
   int textColor;
   //Text Size of the text
   int textSize;
   //Text alignment method for the text in button
   int textAlign;
-    //Text that will be displayed on the button
+  //Text that will be displayed on the button
   String buttonText;
-  
+
   Button(int xPos, int yPos, int wSize, int hSize, int strokeColor, int textColor, String buttonText, int textSize, int textAlign, int bRed, int bGreen, int bBlue) {
     this.xPos = xPos;
     this.yPos = yPos;
@@ -69,15 +69,19 @@ class Button extends Elements {
   void textUpdate() {
     textSize(textSize);
     fill(textColor);
-    if (textAlign == 0) {
+    switch (textAlign) {
+    case 0:
       textAlign(CENTER, CENTER);
       text(buttonText, xPos + wSize/2, yPos + hSize/2);
-    } else if (textAlign == 1) {
+      break;
+    case 1:
       textAlign(RIGHT, CENTER);
       text(buttonText, xPos + wSize, yPos + hSize/2);
-    } else if (textAlign == 2) {
+      break;
+    case 2:
       textAlign(LEFT, CENTER);
       text(buttonText, xPos+3, yPos + hSize/2);
+      break;
     }
   }
 }
