@@ -87,5 +87,6 @@ void getData(int Appr_ID, int tableNr) {
       apprDesc = db.getString("Desc");
     }
   }
+  
   db.close();
 }

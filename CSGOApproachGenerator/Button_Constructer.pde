@@ -65,6 +65,7 @@ class Button extends Elements {
     this.bGreen = bGreen;
     this.bBlue = bBlue;
   }
+  
   //updates text properties
   void textUpdate() {
     textSize(textSize);

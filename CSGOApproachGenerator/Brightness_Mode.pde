@@ -21,6 +21,7 @@ void BrightnessMode() {
   BrightnessMode = new Button(390, 50, 90, 20, strokeColor, textColor, "Dark Mode", 10, 2, bRed, bGreen, bBlue);
   BrightnessMode.Update();
   BrightnessMode.textUpdate();
+  
   if (BrightnessMode.isButtonPressed(mouseX, mouseY, mouseJustPressed2, BrightnessMode)) {
     if (IsDarkModeOn) {
       IsDarkModeOn = false;
@@ -28,6 +29,7 @@ void BrightnessMode() {
       IsDarkModeOn = true;
     }
   }
+  
   BrightnessCheck = new CheckBox(xC, yC, lC, hC, strokeColor, 255, 255, 255);
   BrightnessCheck.Update();
   //Checks which Brightness mode is selected and runs the correct function

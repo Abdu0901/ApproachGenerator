@@ -97,7 +97,7 @@ void loadPictures() {
       InfernoStratAmount++;
     }
   }
-  
+
   //for loop that goes through all maps and loads their coresponding images in arraylist 
   for (int i = 0; i < MapsAmount; i++) {
     MapPics.add(loadImage("maps" + File.separator +"map"+i+".png"));
@@ -131,9 +131,15 @@ void draw() {
 void Start() {
   //BackGround color of the screen
   background(BackGroundColor);
-  
+
   //Calls the Map Selection Function which includes the buttons and text for that part
   MapSelection();
   GenerateApproach();
   BrightnessMode();
+
+  if (keyPressed) {
+    if (key == ESC) {
+      exit();
+    }
+  }
 }
