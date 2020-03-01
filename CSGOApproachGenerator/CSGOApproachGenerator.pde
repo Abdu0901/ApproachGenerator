@@ -18,7 +18,7 @@ SQLite db;
 // use sketchPath() to examples
 
 String tableName, apprName, apprDesc;
-String databaseName = "CSGO_Data.sqlite";  //variabel der indeholder databasens navn
+String databaseName = "optimized_CS.sqlite";  //variabel der indeholder databasens navn
 
 boolean start = false;
 
